@@ -3,7 +3,7 @@
 
 
 (define frame (new frame% 
-               [label "Test"]
+               [label "Memory Game - Phrasal Verbs"]
                [width 500]
                [height 500]))
 
