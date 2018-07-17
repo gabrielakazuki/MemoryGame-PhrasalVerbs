@@ -49,10 +49,8 @@
      (callback (lambda (button event)
                  (send timer stop))))
 
-;(define button-icon
-;  (read-bitmap "images/red.png"))
-;(define button
-;  (new button% [label button-icon] [parent frame]))
+;(define button-icon(read-bitmap "images/red.png"))
+;(define button (new button% [parent frame] [label button-icon] [vert-margin  0] [horiz-margin 0]))
 
 (define mycanvas%
   (class canvas%
