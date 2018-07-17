@@ -12,9 +12,6 @@
              ; Callback procedure for a button click:
              )
 
-
-
-
 (define c0 (make-object bitmap% "images/bath.png"))
 (define c1 (make-object bitmap% "images/bed.png"))
 (define c2 (make-object bitmap% "images/pillow.png"))
