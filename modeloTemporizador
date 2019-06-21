@@ -1,0 +1,40 @@
+#lang racket/gui
+(require racket/gui/base)
+
+
+
+
+ 
+; Make a button in the frame
+(define frame (new frame%
+                   [label "Temporizador"]
+                   [width 300]
+                   [height 300]))
+(define msg (new message% [parent frame]
+                 [label "Press Start"]))
+
+(define t0 0.0 )
+(define diff 0.0)
+
+(define timer (new timer%
+                   [notify-callback (lambda()
+                                      (set! diff (/(round (- (current-inexact-milliseconds) t0)) 1000))
+                                      (send msg set-label (number->string diff)))]
+                   [interval #f]))
+;boato inicio
+(new button% [parent frame] [label "Start"]
+     (callback (lambda (button event)
+                 (set! t0 (- (current-inexact-milliseconds) diff))
+                 (send timer start 1))))
+
+;botao stop
+(new button% [parent frame]
+     [label "Stop"]
+     (callback (lambda (button event)
+                 (send timer stop))))
+
+
+
+
+; Show the frame by calling its show method
+(send frame show #t)
